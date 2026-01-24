@@ -1,13 +1,13 @@
 <template>
   <footer class="footer">
-    <div class="container section-padding">
+    <div class="container">
       <div class="footer-grid">
         <!-- Logo & About -->
         <div class="footer-col col-main">
-          <a href="#" class="logo mb-2">
+          <a href="#" class="logo">
             <span class="logo-text">MIR<span class="text-secondary">CHI</span></span>
           </a>
-          <BaseParagraph class="text-muted mb-3">
+          <BaseParagraph class="text-muted">
             Savor the extraordinary at Mirchi, where tradition meets innovation in every spicy bite. 
             Experience authentic flavors in a premium ambient setting.
           </BaseParagraph>
@@ -22,11 +22,11 @@
         <div class="footer-col">
           <SubTitle class="footer-title">Working Hours</SubTitle>
           <ul class="footer-list">
-            <ListItem class="flex justify-between">
+            <ListItem class="flex gap-1">
               <span class="text-main">Mon - Fri:</span>
               <span class="text-muted">10am - 11pm</span>
             </ListItem>
-            <ListItem class="flex justify-between">
+            <ListItem class="flex gap-1">
               <span class="text-main">Sat - Sun:</span>
               <span class="text-muted">11am - 12pm</span>
             </ListItem>
@@ -56,7 +56,7 @@
         </div>
       </div>
 
-      <div class="footer-bottom mt-5">
+      <div class="footer-bottom mt-3">
         <BaseParagraph class="text-muted">
           &copy; {{ new Date().getFullYear() }} MIRCHI RESTAURANT. All rights reserved. 
           <span class="medium-none">Crafted for Excellence.</span>
@@ -70,8 +70,8 @@
 .footer {
   background: var(--bg-darker);
   border-top: 1px solid var(--border-muted);
-  padding-top: 5rem;
-  padding-bottom: 2rem;
+  padding-top: 3rem;
+  padding-bottom: .5rem;
 }
 
 .footer-grid {
@@ -111,7 +111,7 @@
 .footer-list {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: .75rem;
 }
 
 .social-icon {
@@ -130,13 +130,12 @@
 .social-icon:hover {
   background: var(--secondary-color);
   color: var(--primary-color);
-  transform: translateY(-50%);
+  transform: translateY(-10%);
   border-color: var(--secondary-color);
 }
 
 .footer-bottom {
   text-align: center;
-  padding-top: 2rem;
   border-top: 1px solid var(--border-muted);
 }
 

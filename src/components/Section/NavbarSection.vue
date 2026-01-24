@@ -200,6 +200,9 @@ onMounted(() => {
     align-items: center;
     gap: 2.5rem;
   }
+  .btn-book {
+    margin: 0;
+  }
 
   .logo-item { margin-bottom: 3rem; }
   .logo-text { font-size: 2rem; }
