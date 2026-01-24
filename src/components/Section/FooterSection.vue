@@ -1,167 +1,166 @@
 <template>
-  <!-- ======== Footer section ======== -->
   <footer class="footer">
-    <div class="container medium-2 large-3 gap-2 py-1 medium-py-4">
-      <!-- Footer logo and contact info -->
-      <div class="contact-info">
-        <a href="/" class="logo">
-          <BaseImage image="https://scionassetbd.com/uploads/brands/logo-2.png" alt="Real Estate Logo" />
-        </a>
-
-        <BaseParagraph>
-          We connect buyers and sellers with trusted real estate solutions.
-          From dream homes to investment.
-        </BaseParagraph>
-
-        <div class="social-links">
-          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-facebook-f"></i>
+    <div class="container section-padding">
+      <div class="footer-grid">
+        <!-- Logo & About -->
+        <div class="footer-col col-main">
+          <a href="#" class="logo mb-2">
+            <span class="logo-text">MIR<span class="text-secondary">CHI</span></span>
           </a>
-          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a href="https://wa.me/8801234567890" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-whatsapp"></i>
-          </a>
+          <BaseParagraph class="text-muted mb-3">
+            Savor the extraordinary at Mirchi, where tradition meets innovation in every spicy bite. 
+            Experience authentic flavors in a premium ambient setting.
+          </BaseParagraph>
+          <div class="social-links flex gap-1">
+            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+          </div>
         </div>
 
+        <!-- Working Hours -->
+        <div class="footer-col">
+          <SubTitle class="footer-title">Working Hours</SubTitle>
+          <ul class="footer-list">
+            <ListItem class="flex justify-between">
+              <span class="text-main">Mon - Fri:</span>
+              <span class="text-muted">10am - 11pm</span>
+            </ListItem>
+            <ListItem class="flex justify-between">
+              <span class="text-main">Sat - Sun:</span>
+              <span class="text-muted">11am - 12pm</span>
+            </ListItem>
+            <ListItem class="text-secondary italic mt-1">
+              * Kitchen closes 30 mins early
+            </ListItem>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="footer-col">
+          <SubTitle class="footer-title">Find Us</SubTitle>
+          <ul class="footer-list">
+            <ListItem>
+              <i class="fa-solid fa-location-dot text-secondary mr-2"></i>
+              <span class="text-muted">123 Spice Route, Foodie Hub, Mirpur 1216</span>
+            </ListItem>
+            <ListItem>
+              <i class="fa-solid fa-phone text-secondary mr-2"></i>
+              <span class="text-muted">+880 1234 567 890</span>
+            </ListItem>
+            <ListItem>
+              <i class="fa-solid fa-envelope text-secondary mr-2"></i>
+              <span class="text-muted">hello@mirchirestaurant.com</span>
+            </ListItem>
+          </ul>
+        </div>
       </div>
 
-      <!-- Quick navigation links -->
-      <div>
-        <SubTitle>Contact Us</SubTitle>
-        <ul class="footer-links">
-          <ListItem>
-            <i class="fa-solid fa-location-dot"></i> 123 Business Centre London SW1A 1AA
-          </ListItem>
-          <ListItem>
-            <i class="fa-solid fa-phone"></i> +8801234567890
-          </ListItem>
-          <ListItem>
-            <i class="fa-solid fa-envelope"></i> realestate@gmail.com
-          </ListItem>
-        </ul>
-      </div>
-
-
-      <!-- Newsletter section -->
-      <div class="newsletter">
-        <SubTitle>Newsletter</SubTitle>
-        <BaseParagraph>
-          Subscribe to get the latest property updates, offers, and real estate insights.
+      <div class="footer-bottom mt-5">
+        <BaseParagraph class="text-muted">
+          &copy; {{ new Date().getFullYear() }} MIRCHI RESTAURANT. All rights reserved. 
+          <span class="medium-none">Crafted for Excellence.</span>
         </BaseParagraph>
-        <form class="newsletter-form">
-          <InputField type="email" placeholder="Enter your email" required />
-          <BaseButton type="submit"><i class="fa-solid fa-paper-plane"></i></BaseButton>
-        </form>
       </div>
-    </div>
-
-    <!-- Footer bottom copyright -->
-    <div class="footer-bottom">
-      <BaseParagraph>{{ new Date().getFullYear() }} &copy; All rights reserved by RealEstate, Bangladesh
-      </BaseParagraph>
     </div>
   </footer>
 </template>
 
 <style scoped>
 .footer {
-  color: rgb(from var(--white-color)r g b / 90%);
-  background: var(--dark-color);
+  background: var(--bg-darker);
+  border-top: 1px solid var(--border-muted);
+  padding-top: 5rem;
+  padding-bottom: 2rem;
 }
 
-.footer .logo img {
-  height: 70px;
-  width: auto;
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.5fr;
+  gap: 4rem;
 }
 
-.footer .social-links {
-  display: flex;
-  gap: 1rem;
-  font-size: 1.5rem;
-
+.logo-text {
+  font-family: var(--heading-font);
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: var(--white);
+  display: block;
 }
 
-.footer .social-links a {
-  border-radius: .25rem;
-  background: var(--white-color);
-  color: var(--secondary-color);
-  padding: 0 .75rem;
-  /* border: 1px solid var(--border-color); */
-}
-
-.footer .sub-title {
+.footer-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--white);
   position: relative;
-  padding-bottom: 1rem;
-  margin-bottom: 1rem;
+  display: inline-block;
 }
 
-.footer .sub-title::after {
+.footer-title::after {
   content: '';
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: -8px;
+  width: 40px;
   height: 2px;
-  width: 50px;
   background: var(--secondary-color);
 }
 
-.footer ul li {
-  margin: .75rem 0;
+.footer-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
 }
 
-.footer ul li a {
-  padding: .25rem 0;
-  position: relative;
-}
-
-.footer ul li a::before {
-  content: '➔';
-  position: absolute;
-  left: -1rem;
-  visibility: hidden;
-  opacity: 0;
-  transition: all .3s ease-in-out;
-}
-
-.footer ul li a:hover::before {
-  left: 0;
-  opacity: 1;
-  color: var(--primary-color);
-  visibility: visible;
-}
-
-.footer ul li a:hover {
-  color: var(--primary-color);
-  padding-left: 1.25rem;
-}
-
-.footer .newsletter-form {
+.social-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--bg-surface);
+  color: var(--white);
   display: flex;
   align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
 }
 
-.footer .newsletter-form input {
-  background: var(--white-color);
-  border-radius: .25rem 0 0 .25rem;
-  margin: 0;
-  border: 1px solid var(--primary-color);
-}
-
-.footer .newsletter-form .btn {
-  padding: 1rem 2rem;
+.social-icon:hover {
   background: var(--secondary-color);
-  border-radius: 0 .25rem .25rem 0;
-  margin: 0;
-}
-.footer .newsletter-form .btn i{
-  color: var(--white-color);
+  color: var(--primary-color);
+  transform: translateY(-50%);
+  border-color: var(--secondary-color);
 }
 
 .footer-bottom {
   text-align: center;
-  padding: .75rem;
-  border-top: 1px solid rgb(from var(--border-color) r g b / 40%);
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-muted);
+}
+
+@media (max-width: 992px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .footer-col {
+    text-align: center;
+  }
+  
+  .footer-title::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .footer-list li {
+    justify-content: center !important;
+  }
+  
+  .social-links {
+    justify-content: center;
+  }
 }
 </style>

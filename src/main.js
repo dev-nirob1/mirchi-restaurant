@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import './assets/main.css'
+import Animations from './plugins/animations'
 
 import BaseButton from './components/element/BaseButton.vue'
 import BaseImage from './components/element/BaseImage.vue'
@@ -34,5 +35,6 @@ app.component('TableHeader', TableHeader)
 app.component('TableRow', TableRow)
 
 app.use(router)
+app.use(Animations)
 
 app.mount('#app')
