@@ -30,7 +30,7 @@ onMounted(() => {
                <span class="logo-text">MIR<span class="text-secondary">CHI</span></span>
             </ListItem>
             <ListItem><a href="#hero" @click="isMenuOpen = false">Home</a></ListItem>
-            <ListItem><a href="#menu" @click="isMenuOpen = false">Menu</a></ListItem>
+            <ListItem><a href="/menu" @click="isMenuOpen = false">Menu</a></ListItem>
             <ListItem><a href="#reservations" @click="isMenuOpen = false">Reservations</a></ListItem>
             <ListItem><a href="#contact" @click="isMenuOpen = false">Contact</a></ListItem>
           </ul>

@@ -1,5 +1,6 @@
 import MainLayout from './Layout/MainLayout.vue';
 import HomePage from './Pages/HomePage.vue';
+import MenuPage from './Pages/MenuPage.vue';
 
 const frontRoutes = [
   {
@@ -10,6 +11,11 @@ const frontRoutes = [
         path: '',
         name: 'home',
         component: HomePage,
+      },
+      {
+        path: 'menu',
+        name: 'menu',
+        component: MenuPage,
       },
     ],
   },
