@@ -1,7 +1,7 @@
 <script setup>
 // import ModernHero from '@/zems/Front/Components/Section/ModernHero.vue';
 // import CulinaryPhilosophy from '@/zems/Front/Components/Section/CulinaryPhilosophy.vue';
-import ModernSignature from '@/zems/Front/Components/Section/ModernSignature.vue';
+import SignatureDishes from '@/zems/Front/Components/Section/SignatureDishes.vue';
 import GalleryMasonry from '@/zems/Front/Components/Section/GalleryMasonry.vue';
 import FlavorStats from '@/zems/Front/Components/Section/FlavorStats.vue';
 import ModernTestimonials from '@/zems/Front/Components/Section/ModernTestimonials.vue';
@@ -16,7 +16,7 @@ import AboutIntro from '../Components/Section/AboutIntro.vue';
     <!-- <ModernHero /> -->
     <AboutIntro />
     <!-- <CulinaryPhilosophy /> -->
-    <ModernSignature />
+    <SignatureDishes />
     <GalleryMasonry />
     <FlavorStats />
     <ModernTestimonials />

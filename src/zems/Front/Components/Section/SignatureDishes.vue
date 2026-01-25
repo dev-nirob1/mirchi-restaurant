@@ -1,157 +1,59 @@
 <script setup>
-const dishes = [
-  {
-    name: 'Guntur Chili Chicken',
-    heat: 3,
-    desc: 'A fiery tribute to the red chilies of Guntur, slow-cooked with aromatic spices.',
-    img: 'https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?q=80&w=2000&auto=format&fit=crop'
-  },
-  {
-    name: 'Pepper Crab Masala',
-    heat: 2,
-    desc: 'Fresh sea crab tossed in a black pepper and curry leaf reduction.',
-    img: 'https://images.unsplash.com/photo-1563379091339-03b21bc4a4f8?q=80&w=2000&auto=format&fit=crop'
-  },
-  {
-    name: 'Saffron Lamb Korma',
-    heat: 1,
-    desc: 'Mild but flavorful, infused with premium saffron and almond cream.',
-    img: 'https://images.unsplash.com/photo-1527477396000-e27163b481c2?q=80&w=2000&auto=format&fit=crop'
-  }
-];
+import SectionTitle from '@/components/Widget/SectionTitle.vue';
+import { ref } from 'vue';
+import MenuCard from '../Widget/MenuCard.vue';
+const signaturedDishes = ref(
+  [
+    {
+      id: 1,
+      title: "Guntur Chili Chicken",
+      desc: "A fiery signature preparation using hand-pounded Guntur chilies and slow-roasted spices.",
+      price: "$25",
+      image: "https://images.unsplash.com/photo-1602253057119-44d745d9b860?q=80&w=726&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      id: 2,
+      title: "Malabar Pepper Crab",
+      desc: "Fresh sea crab tossed in a reduction of tellicherry peppercorns and toasted curry leaves.",
+      price: "$32",
+      image: "https://images.unsplash.com/photo-1559847844-5315695dadae?q=80&w=858&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      id: 3,
+      title: "Saffron Lamb Shank",
+      desc: "12-hour braised pasture-raised lamb in a gravy of wild saffron and ancient clay-pot spices.",
+      price: "$38",
+      image: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      id: 4,
+      title: "Smoked Paneer Tikka",
+      desc: "House-made organic cottage cheese doused in a spicy yogurt marinade and oak-wood smoked.",
+      price: "$22",
+      image: "https://images.unsplash.com/photo-1606850246029-dd00bd5eff97?q=80&w=580&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    }
+  ]
+)
+
 </script>
 
 <template>
-  <section class="signature-dishes">
+  <section class="signature-dishes bg-light">
     <div class="container">
-      <div class="section-title text-center">
-        <h2 v-fade-in>SIGNATURE SELECTION</h2>
-        <p class="subtitle" v-fade-in>Crafted by our master spice-smiths</p>
+      <SectionTitle class="mb-3" subTitle="Our Manifestation" title="Signature Creations" />
+      <div class="medium-2 gap-2">
+        <MenuCard v-for="dish in signaturedDishes" :key="dish.id" :dish="dish" />
       </div>
+    </div>
 
-      <div class="dishes-grid">
-        <div v-for="dish in dishes" :key="dish.name" class="dish-card" v-fade-in="'up'">
-          <div class="dish-img">
-            <img :src="dish.img" :alt="dish.name">
-            <div class="heat-meter">
-              <span v-for="n in 3" :key="n" :class="{ active: n <= dish.heat }">🌶️</span>
-            </div>
-          </div>
-          <div class="dish-info">
-            <h3>{{ dish.name }}</h3>
-            <p>{{ dish.desc }}</p>
-            <button class="btn-detail">Explore Recipe</button>
-          </div>
-        </div>
-      </div>
+    <div class="container text-center mt-3" v-fade-in>
+      <RouterLink to="/menu" class="btn btn-outline">Explore the Full Anthology</RouterLink>
     </div>
   </section>
 </template>
 
 <style scoped>
 .signature-dishes {
-  padding: 8rem 0;
-  background: #000;
-}
-
-.section-title {
-  margin-bottom: 5rem;
-}
-
-h2 {
-  font-size: 3rem;
-  font-weight: 900;
-  letter-spacing: 0.3rem;
-}
-
-.subtitle {
-  color: #d4af37;
-  letter-spacing: 0.2rem;
-  margin-top: 1rem;
-}
-
-.dishes-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
-  padding: 0 2rem;
-}
-
-.dish-card {
-  background: #111;
-  transition: all 0.4s ease;
-}
-
-.dish-card:hover {
-  transform: translateY(-15px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.8);
-}
-
-.dish-img {
-  position: relative;
-  height: 400px;
-}
-
-.dish-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.heat-meter {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: rgba(0,0,0,0.7);
-  padding: 0.5rem 1rem;
-  border-radius: 2rem;
-  display: flex;
-  gap: 0.2rem;
-}
-
-.heat-meter span {
-  opacity: 0.2;
-  font-size: 1.2rem;
-}
-
-.heat-meter span.active {
-  opacity: 1;
-  filter: drop-shadow(0 0 5px red);
-}
-
-.dish-info {
-  padding: 2.5rem;
-}
-
-h3 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  color: #fff;
-}
-
-p {
-  color: #888;
-  line-height: 1.6;
-  margin-bottom: 2rem;
-}
-
-.btn-detail {
-  background: transparent;
-  color: #d4af37;
-  border: 1px solid #d4af37;
-  padding: 0.75rem 1.5rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.btn-detail:hover {
-  background: #d4af37;
-  color: #000;
-}
-
-@media (max-width: 992px) {
-  .dishes-grid { grid-template-columns: 1fr; }
-  .dish-img { height: 350px; }
+  padding: 3.75rem 0;
 }
 </style>
