@@ -1,6 +1,7 @@
 import MainLayout from './Layout/MainLayout.vue';
 import HomePage from './Pages/HomePage.vue';
 import MenuPage from './Pages/MenuPage.vue';
+import AboutPage from './Pages/AboutPage.vue';
 
 const frontRoutes = [
   {
@@ -16,6 +17,11 @@ const frontRoutes = [
         path: 'menu',
         name: 'menu',
         component: MenuPage,
+      },
+      {
+        path: 'about',
+        name: 'about',
+        component: AboutPage,
       },
     ],
   },

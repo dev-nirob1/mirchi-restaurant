@@ -1,5 +1,6 @@
 <script setup>
 import { onMounted, ref } from 'vue';
+import { RouterLink } from 'vue-router';
 
 const isMenuOpen = ref(false);
 const isScrolled = ref(false);
@@ -29,8 +30,9 @@ onMounted(() => {
             <ListItem class="mobile-only logo-item">
                <span class="logo-text">MIR<span class="text-secondary">CHI</span></span>
             </ListItem>
-            <ListItem><a href="#hero" @click="isMenuOpen = false">Home</a></ListItem>
-            <ListItem><a href="/menu" @click="isMenuOpen = false">Menu</a></ListItem>
+            <ListItem><RouterLink to="/" @click="isMenuOpen = false">Home</RouterLink></ListItem>
+            <ListItem><RouterLink to="/about" @click="isMenuOpen = false">About</RouterLink></ListItem>
+            <ListItem><RouterLink to="/menu" @click="isMenuOpen = false">Menu</RouterLink></ListItem>
             <ListItem><a href="#reservations" @click="isMenuOpen = false">Reservations</a></ListItem>
             <ListItem><a href="#contact" @click="isMenuOpen = false">Contact</a></ListItem>
           </ul>
