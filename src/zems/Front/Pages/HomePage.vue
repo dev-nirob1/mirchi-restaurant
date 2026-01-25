@@ -1,7 +1,7 @@
 <script setup>
 import SignatureDishes from '@/zems/Front/Components/Section/SignatureDishes.vue';
 import ServicesSection from '@/zems/Front/Components/Section/ServicesSection.vue';
-import FlavorStats from '@/zems/Front/Components/Section/FlavorStats.vue';
+// import FlavorStats from '@/zems/Front/Components/Section/FlavorStats.vue';
 import CallToRitual from '@/zems/Front/Components/Section/CallToRitual.vue';
 import HeroSection from '../Components/Section/HeroSection.vue';
 import AboutIntro from '../Components/Section/AboutIntro.vue';
@@ -14,7 +14,7 @@ import TestimonialSection from '../Components/Section/TestimonialSection.vue';
     <AboutIntro />
     <SignatureDishes />
     <ServicesSection />
-    <FlavorStats />
+    <!-- <FlavorStats /> -->
     <TestimonialSection />
     <CallToRitual />
   </div>

@@ -91,8 +91,7 @@ onUnmounted(() => stopAutoPlay());
 
 <style scoped>
 .testimonial-section {
-  padding: 8rem 0;
-  background-color: var(--bg-darker);
+  padding: 3.75rem 0;
 }
 
 .carousel-container {

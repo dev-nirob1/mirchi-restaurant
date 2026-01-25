@@ -8,7 +8,7 @@
             <span class="logo-text">MIR<span class="text-secondary">CHI</span></span>
           </a>
           <BaseParagraph class="text-muted">
-            Savor the extraordinary at Mirchi, where tradition meets innovation in every spicy bite. 
+            Savor the extraordinary at Mirchi, where tradition meets innovation in every spicy bite.
             Experience authentic flavors in a premium ambient setting.
           </BaseParagraph>
           <div class="social-links flex gap-1">
@@ -56,10 +56,9 @@
         </div>
       </div>
 
-      <div class="footer-bottom mt-3">
+      <div class="footer-bottom">
         <BaseParagraph class="text-muted">
-          &copy; {{ new Date().getFullYear() }} MIRCHI RESTAURANT. All rights reserved. 
-          <span class="medium-none">Crafted for Excellence.</span>
+          &copy; {{ new Date().getFullYear() }} MIRCHI RESTAURANT. All rights reserved.
         </BaseParagraph>
       </div>
     </div>
@@ -70,8 +69,8 @@
 .footer {
   background: var(--bg-darker);
   border-top: 1px solid var(--border-muted);
-  padding-top: 3rem;
-  padding-bottom: .5rem;
+  padding-top: 3.75rem;
+  padding-bottom: 1rem;
 }
 
 .footer-grid {
@@ -80,9 +79,18 @@
   gap: 4rem;
 }
 
+.logo {
+  margin-bottom: 1rem;
+}
+
+.footer-col p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
 .logo-text {
   font-family: var(--heading-font);
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 800;
   letter-spacing: 2px;
   color: var(--white);
@@ -90,53 +98,71 @@
 }
 
 .footer-title {
-  font-size: 1.3rem;
+  font-size: 1.15rem;
   font-weight: 700;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   color: var(--white);
   position: relative;
   display: inline-block;
-}
-
-.footer-title::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -8px;
-  width: 40px;
-  height: 2px;
-  background: var(--secondary-color);
+  text-transform: uppercase;
 }
 
 .footer-list {
   display: flex;
   flex-direction: column;
-  gap: .75rem;
+  gap: 0.5rem;
+  padding: 0;
+  /* Ensure no default padding */
+  margin: 0;
+}
+
+.footer-list li {
+  font-size: 0.9rem;
+  padding: 0 !important;
+  /* Reset any global li padding */
+  margin: 0;
+}
+
+.social-links {
+  margin-top: 1.5rem;
 }
 
 .social-icon {
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   background: var(--bg-surface);
   color: var(--white);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
-  border: 1px solid transparent;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-icon i {
+  transition: transform 0.3s ease;
+  font-size: 1.1rem;
 }
 
 .social-icon:hover {
   background: var(--secondary-color);
   color: var(--primary-color);
-  transform: translateY(-10%);
-  border-color: var(--secondary-color);
+}
+
+.social-icon:hover i {
+  transform: scale(1.3);
 }
 
 .footer-bottom {
   text-align: center;
   border-top: 1px solid var(--border-muted);
+  padding-top: 1rem;
+  margin-top: 3rem;
+}
+
+.footer-bottom p {
+  font-size: 0.85rem;
+  letter-spacing: 1px;
 }
 
 @media (max-width: 992px) {
@@ -144,20 +170,15 @@
     grid-template-columns: 1fr;
     gap: 3rem;
   }
-  
+
   .footer-col {
     text-align: center;
   }
-  
-  .footer-title::after {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  
+
   .footer-list li {
     justify-content: center !important;
   }
-  
+
   .social-links {
     justify-content: center;
   }

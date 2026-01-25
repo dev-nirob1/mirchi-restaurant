@@ -34,7 +34,7 @@ const services = [
             <i :class="`fa-solid ${service.icon}`"></i>
           </div>
           <SubTitle>{{ service.title }}</SubTitle>
-          <BaseParagraph class="px-1">{{ service.desc }}</BaseParagraph>
+          <BaseParagraph>{{ service.desc }}</BaseParagraph>
         </div>
       </div>
     </div>

@@ -17,8 +17,8 @@ onMounted(() => {
 </script>
 
 <template>
-  <header class="nav-container" :class="{ 'is-scrolled': isScrolled }">
-    <div class="container container-nav">
+  <header class="navbar" :class="{ 'is-scrolled': isScrolled }">
+    <div class="container">
       <nav class="nav-inner flex justify-between align-center">
         <!-- Logo -->
         <RouterLink to="/" class="nav-logo" @click="isMenuOpen = false">
@@ -45,11 +45,11 @@ onMounted(() => {
 
         <!-- Call to Action -->
         <div class="nav-meta flex align-center gap-2">
-            <RouterLink to="/reservation" class="nav-btn">Reserve</RouterLink>
-            <button @click="handleHamburger" class="nav-toggle" :class="{ 'is-active': isMenuOpen }">
-              <span></span>
-              <span></span>
-            </button>
+          <RouterLink to="/reservation" class="nav-btn">Reserve</RouterLink>
+          <button @click="handleHamburger" class="nav-toggle" :class="{ 'is-active': isMenuOpen }">
+            <span></span>
+            <span></span>
+          </button>
         </div>
       </nav>
     </div>
@@ -57,7 +57,7 @@ onMounted(() => {
 </template>
 
 <style scoped>
-.nav-container {
+.navbar {
   position: fixed;
   top: 0;
   left: 0;
@@ -67,16 +67,14 @@ onMounted(() => {
   transition: var(--transition);
 }
 
-.nav-container.is-scrolled {
+.navbar.is-scrolled {
   padding: 1.25rem 0;
   background: rgba(5, 5, 5, 0.9);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.container-nav {
-  max-width: 1600px;
-}
+
 
 .nav-logo {
   font-family: var(--font-serif);
@@ -103,7 +101,8 @@ onMounted(() => {
   position: relative;
 }
 
-.nav-link:hover, .router-link-active {
+.nav-link:hover,
+.router-link-exact-active {
   opacity: 1;
   color: var(--color-crimson);
 }
@@ -145,26 +144,34 @@ onMounted(() => {
   position: absolute;
 }
 
-.nav-toggle span:first-child { top: 0; }
-.nav-toggle span:last-child { bottom: 0; }
+.nav-toggle span:first-child {
+  top: 0;
+}
+
+.nav-toggle span:last-child {
+  bottom: 0;
+}
 
 .nav-toggle.is-active span:first-child {
   transform: rotate(45deg) translateY(9px);
 }
+
 .nav-toggle.is-active span:last-child {
   transform: rotate(-45deg) translateY(-9px);
 }
 
 @media (max-width: 992px) {
-  .nav-toggle { display: block; }
-  
+  .nav-toggle {
+    display: block;
+  }
+
   .nav-links-wrap {
     position: fixed;
     top: 0;
     right: -100%;
     width: 100%;
     height: 100vh;
-    background: var(--color-cream);
+    background: #000;
     display: flex;
     align-items: center;
     justify-content: center;

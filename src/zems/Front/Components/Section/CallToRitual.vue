@@ -1,20 +1,20 @@
+<script setup>
+</script>
+
 <template>
-  <section class="ritual-cta section relative">
-    <div class="cta-bg">
-      <img
-        src="https://images.unsplash.com/photo-1723612442835-7ed3162f3263?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        alt="Atmospheric Dining Room">
-      <div class="overlay-dark"></div>
+  <section class="ritual-cta">
+    <div class="ritual-image">
+      <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&q=80&w=2000"
+        alt="Mirchi Sanctuary" />
     </div>
-
-    <div class="container relative z-10 text-center flex-center col">
-      <h2 class="massive-title text-white mb-2" v-fade-in="'up'">ARE YOU READY FOR THE <br /> <span
-          class="accent-text text-white">MIRCHI RITUAL?</span></h2>
-      <p class="text-white opacity-7 mb-4" v-fade-in="'up'">Tables are released 30 days in advance. We invite you to
-        secure your seat at our sanctuary of spice.</p>
-
+    <div class="ritual-content">
+      <h2 v-fade-in="'up'">READY FOR THE <span class="text-secondary">MIRCHI RITUAL?</span></h2>
+      <BaseParagraph v-fade-in="'up'">
+        Tables are released 30 days in advance. We invite you to
+        secure your seat at our sanctuary of spice.
+      </BaseParagraph>
       <div v-fade-in="'up'">
-        <RouterLink to="/reservation" class="btn btn-primary">Secure a Table</RouterLink>
+        <BaseButton class="btn-primary">SECURE A TABLE</BaseButton>
       </div>
     </div>
   </section>
@@ -22,66 +22,75 @@
 
 <style scoped>
 .ritual-cta {
-  height: 70vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background-color: var(--color-charcoal);
-}
-
-.cta-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
+  min-height: 60vh;
+  background-color: var(--primary-color);
   width: 100%;
-  height: 100%;
 }
 
-.cta-bg img {
+.ritual-image {
+  flex: 0 0 50%;
+  position: relative;
+  overflow: hidden;
+}
+
+.ritual-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.6;
 }
 
-.overlay-dark {
+.ritual-image::after {
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to top, rgba(5, 5, 5, 1) 0%, rgba(5, 5, 5, 0.3) 100%);
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.4), transparent);
 }
 
-.massive-title {
-  font-size: var(--heading-2);
+.ritual-content {
+  flex: 0 0 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
 }
 
-.text-white {
-  color: var(--color-white);
+.ritual-content h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 900;
+  line-height: 1;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
 }
 
-.accent-text.text-white {
-  color: var(--color-crimson) !important;
-}
-
-.opacity-7 {
-  opacity: 0.7;
-}
-
-.mb-2 {
+.ritual-content p {
+  font-size: 1.15rem;
+  opacity: 0.8;
+  max-width: 550px;
   margin-bottom: 2rem;
 }
 
-.mb-4 {
-  margin-bottom: 4rem;
-}
-
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .ritual-cta {
-    height: auto;
-    padding: 10rem 0;
+    flex-direction: column;
+  }
+
+  .ritual-image,
+  .ritual-content {
+    flex: 0 0 100%;
+  }
+
+  .ritual-image {
+    height: 400px;
+  }
+
+  .ritual-content {
+    padding: 3rem 2rem;
+    text-align: center;
+    align-items: center;
   }
 }
 </style>
