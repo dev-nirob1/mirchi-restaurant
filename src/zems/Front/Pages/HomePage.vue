@@ -1,8 +1,6 @@
 <script setup>
-// import ModernHero from '@/zems/Front/Components/Section/ModernHero.vue';
-// import CulinaryPhilosophy from '@/zems/Front/Components/Section/CulinaryPhilosophy.vue';
 import SignatureDishes from '@/zems/Front/Components/Section/SignatureDishes.vue';
-import GalleryMasonry from '@/zems/Front/Components/Section/GalleryMasonry.vue';
+import ServicesSection from '@/zems/Front/Components/Section/ServicesSection.vue';
 import FlavorStats from '@/zems/Front/Components/Section/FlavorStats.vue';
 import CallToRitual from '@/zems/Front/Components/Section/CallToRitual.vue';
 import HeroSection from '../Components/Section/HeroSection.vue';
@@ -13,11 +11,9 @@ import TestimonialSection from '../Components/Section/TestimonialSection.vue';
 <template>
   <div class="home-page-modern">
     <HeroSection />
-    <!-- <ModernHero /> -->
     <AboutIntro />
-    <!-- <CulinaryPhilosophy /> -->
     <SignatureDishes />
-    <GalleryMasonry />
+    <ServicesSection />
     <FlavorStats />
     <TestimonialSection />
     <CallToRitual />
