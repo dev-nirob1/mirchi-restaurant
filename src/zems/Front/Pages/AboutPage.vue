@@ -1,19 +1,31 @@
+<script setup>
+import PageHero from '@/zems/Front/Components/Widget/PageHero.vue';
+import AboutHeritage from '@/zems/Front/Components/Section/AboutHeritage.vue';
+import AboutPhilosophy from '@/zems/Front/Components/Section/AboutPhilosophy.vue';
+import AboutTeam from '@/zems/Front/Components/Section/AboutTeam.vue';
+import AboutAwards from '@/zems/Front/Components/Section/AboutAwards.vue';
+import AboutTimeline from '@/zems/Front/Components/Section/AboutTimeline.vue';
+import AboutGallery from '@/zems/Front/Components/Section/AboutGallery.vue';
+import AboutNewsletter from '@/zems/Front/Components/Section/AboutNewsletter.vue';
+</script>
+
 <template>
-  <main class="about-reset section">
-    <div class="container text-center">
-      <h1 class="v-fade-in-up">Our Story</h1>
-      <p class="v-fade-in-up mt-2 mx-auto">Coming soon: A new narrative of heritage and taste.</p>
-    </div>
-  </main>
+  <div class="about-page">
+    <PageHero title="Our Story"
+      backgroundImage="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&q=80&w=2000" />
+    <AboutHeritage />
+    <AboutPhilosophy />
+    <AboutTeam />
+    <AboutAwards />
+    <AboutTimeline />
+    <AboutGallery />
+    <AboutNewsletter />
+  </div>
 </template>
 
 <style scoped>
-.about-reset {
-  min-height: 80vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.about-page {
+  background-color: var(--primary-color);
+  min-height: 100vh;
 }
-.mx-auto { margin-left: auto; margin-right: auto; }
-.mt-2 { margin-top: 2rem; }
 </style>

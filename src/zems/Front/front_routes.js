@@ -1,8 +1,8 @@
-import MainLayout from './Layout/MainLayout.vue';
-import HomePage from './Pages/HomePage.vue';
-import MenuPage from './Pages/MenuPage.vue';
-import AboutPage from './Pages/AboutPage.vue';
-import ReservationPage from './Pages/ReservationPage.vue';
+import MainLayout from './Layout/MainLayout.vue'
+import HomePage from './Pages/HomePage.vue'
+import MenuPage from './Pages/MenuPage.vue'
+import AboutPage from './Pages/AboutPage.vue'
+import ReservationPage from './Pages/ReservationPage.vue'
 
 const frontRoutes = [
   {
@@ -31,6 +31,6 @@ const frontRoutes = [
       },
     ],
   },
-];
+]
 
-export default frontRoutes;
+export default frontRoutes
