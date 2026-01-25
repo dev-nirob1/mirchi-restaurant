@@ -28,9 +28,14 @@ import { RouterLink } from 'vue-router';
     background: linear-gradient(to bottom, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&q=80&w=2000') center / cover no-repeat;
 }
 
+.hero-section .hero-title span.highlight {
+    font-style: italic;
+    color: var(--accent-color);
+}
+
 .hero-section p {
     font-size: 1.1rem;
-    margin: 1.2rem 0;
+    margin: 2rem 0;
     color: var(--color-white);
 }
 
