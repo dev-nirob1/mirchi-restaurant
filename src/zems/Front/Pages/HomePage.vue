@@ -4,10 +4,10 @@
 import SignatureDishes from '@/zems/Front/Components/Section/SignatureDishes.vue';
 import GalleryMasonry from '@/zems/Front/Components/Section/GalleryMasonry.vue';
 import FlavorStats from '@/zems/Front/Components/Section/FlavorStats.vue';
-import ModernTestimonials from '@/zems/Front/Components/Section/ModernTestimonials.vue';
 import CallToRitual from '@/zems/Front/Components/Section/CallToRitual.vue';
 import HeroSection from '../Components/Section/HeroSection.vue';
 import AboutIntro from '../Components/Section/AboutIntro.vue';
+import TestimonialSection from '../Components/Section/TestimonialSection.vue';
 </script>
 
 <template>
@@ -19,7 +19,7 @@ import AboutIntro from '../Components/Section/AboutIntro.vue';
     <SignatureDishes />
     <GalleryMasonry />
     <FlavorStats />
-    <ModernTestimonials />
+    <TestimonialSection />
     <CallToRitual />
   </div>
 </template>
