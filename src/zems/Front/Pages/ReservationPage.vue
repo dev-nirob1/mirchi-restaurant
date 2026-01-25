@@ -1,14 +1,14 @@
 <template>
-  <main class="about-reset section">
+  <main class="reservation-reset section">
     <div class="container text-center">
-      <h1 class="v-fade-in-up">Our Story</h1>
-      <p class="v-fade-in-up mt-2 mx-auto">Coming soon: A new narrative of heritage and taste.</p>
+      <h1 class="v-fade-in-up">Reservations</h1>
+      <p class="v-fade-in-up mt-2 mx-auto">Coming soon: A new way to secure your ritual.</p>
     </div>
   </main>
 </template>
 
 <style scoped>
-.about-reset {
+.reservation-reset {
   min-height: 80vh;
   display: flex;
   align-items: center;

@@ -11,44 +11,45 @@ const handleHamburger = () => {
 
 onMounted(() => {
   window.addEventListener('scroll', () => {
-    isScrolled.value = window.scrollY > 50;
+    isScrolled.value = window.scrollY > 20;
   });
 });
 </script>
 
 <template>
-  <header class="navbar-wrapper" :class="{ 'scrolled': isScrolled }">
-    <div class="container">
-      <nav class="navbar flex justify-between align-center">
-        <a href="#" class="logo">
-          <span class="logo-text">MIR<span class="text-secondary">CHI</span></span>
-        </a>
+  <header class="nav-container" :class="{ 'is-scrolled': isScrolled }">
+    <div class="container container-nav">
+      <nav class="nav-inner flex justify-between align-center">
+        <!-- Logo -->
+        <RouterLink to="/" class="nav-logo" @click="isMenuOpen = false">
+          MIRCHI
+        </RouterLink>
 
-        <!-- Links for Desktop & Mobile -->
-        <div class="nav-links-wrapper" :class="{ 'active': isMenuOpen }">
-          <ul class="nav-links flex">
-            <ListItem class="mobile-only logo-item">
-               <span class="logo-text">MIR<span class="text-secondary">CHI</span></span>
-            </ListItem>
-            <ListItem><RouterLink to="/" @click="isMenuOpen = false">Home</RouterLink></ListItem>
-            <ListItem><RouterLink to="/about" @click="isMenuOpen = false">About</RouterLink></ListItem>
-            <ListItem><RouterLink to="/menu" @click="isMenuOpen = false">Menu</RouterLink></ListItem>
-            <ListItem><a href="#reservations" @click="isMenuOpen = false">Reservations</a></ListItem>
-            <ListItem><a href="#contact" @click="isMenuOpen = false">Contact</a></ListItem>
+        <!-- Navigation Links -->
+        <div class="nav-links-wrap" :class="{ 'is-active': isMenuOpen }">
+          <ul class="nav-list flex align-center">
+            <li class="nav-item">
+              <RouterLink to="/" @click="isMenuOpen = false" class="nav-link">Home</RouterLink>
+            </li>
+            <li class="nav-item">
+              <RouterLink to="/about" @click="isMenuOpen = false" class="nav-link">Our Story</RouterLink>
+            </li>
+            <li class="nav-item">
+              <RouterLink to="/menu" @click="isMenuOpen = false" class="nav-link">Menu</RouterLink>
+            </li>
+            <li class="nav-item">
+              <RouterLink to="/reservation" @click="isMenuOpen = false" class="nav-link">Reservations</RouterLink>
+            </li>
           </ul>
         </div>
 
-        <div class="nav-actions flex align-center gap-2">
-          <a href="tel:+8801234567890" class="phone-link hide-mobile">
-            <i class="fa-solid fa-phone text-secondary mr-1"></i>
-            <span class="text-main">+880 1234 567 890</span>
-          </a>
-          <BaseButton class="bg-secondary text-primary btn-book" @click="isMenuOpen = false">
-            Order Now
-          </BaseButton>
-          <div @click="handleHamburger" class="hamburger flex-center">
-            <div class="bar" :class="{ 'active': isMenuOpen }"></div>
-          </div>
+        <!-- Call to Action -->
+        <div class="nav-meta flex align-center gap-2">
+            <RouterLink to="/reservation" class="nav-btn">Reserve</RouterLink>
+            <button @click="handleHamburger" class="nav-toggle" :class="{ 'is-active': isMenuOpen }">
+              <span></span>
+              <span></span>
+            </button>
         </div>
       </nav>
     </div>
@@ -56,157 +57,137 @@ onMounted(() => {
 </template>
 
 <style scoped>
-.navbar-wrapper {
+.nav-container {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
-  padding: 1.5rem 0;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 2.5rem 0;
+  transition: var(--transition);
 }
 
-.navbar-wrapper.scrolled {
-  padding: 0.75rem 0;
-  background: rgba(15, 15, 15, 0.9);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+.nav-container.is-scrolled {
+  padding: 1.25rem 0;
+  background: rgba(5, 5, 5, 0.9);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
-.logo-text {
-  font-family: var(--heading-font);
-  font-size: 1.8rem;
+.container-nav {
+  max-width: 1600px;
+}
+
+.nav-logo {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
   font-weight: 800;
-  letter-spacing: 2px;
-  color: var(--white);
-  transition: transform 0.3s ease;
-}
-
-.logo:hover .logo-text {
-  transform: scale(1.05);
-}
-
-.nav-links {
-  gap: 2.5rem;
-}
-
-.nav-links a {
-  font-weight: 600;
-  font-size: 0.95rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: var(--text-main);
-  position: relative;
-  transition: color 0.3s ease;
-}
-
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--secondary-color);
-  transition: width 0.3s ease;
-}
-
-.nav-links a:hover {
-  color: var(--secondary-color);
-}
-
-.nav-links a:hover::after {
-  width: 100%;
-}
-
-.btn-book {
-  padding: 0.75rem 1.8rem;
-  font-size: 0.9rem;
-  font-weight: 700;
-  border-radius: 4px;
-  box-shadow: var(--glow-gold);
-  transition: all 0.3s ease;
-}
-
-.btn-book:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
-}
-
-.hamburger {
-  display: none;
-  cursor: pointer;
-  width: 30px;
-  height: 20px;
-  position: relative;
+  letter-spacing: 0.2em;
+  color: var(--color-bone);
   z-index: 1001;
 }
 
-.bar {
-  width: 100%;
-  height: 2px;
-  background: var(--white);
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  transition: background 0.3s ease;
+.nav-list {
+  gap: 3rem;
 }
 
-.bar::before, .bar::after {
-  content: '';
-  width: 100%;
-  height: 2px;
-  background: var(--white);
-  position: absolute;
-  left: 0;
-  transition: all 0.3s ease;
+.nav-link {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-bone);
+  opacity: 0.6;
+  transition: var(--transition);
+  position: relative;
 }
 
-.bar::before { top: -8px; }
-.bar::after { top: 8px; }
+.nav-link:hover, .router-link-active {
+  opacity: 1;
+  color: var(--color-crimson);
+}
 
-.bar.active { background: transparent; }
-.bar.active::before { top: 0; transform: rotate(45deg); }
-.bar.active::after { top: 0; transform: rotate(-45deg); }
+.nav-btn {
+  padding: 0.875rem 2rem;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  background: var(--color-crimson);
+  color: var(--color-white);
+  border-radius: 0;
+  transition: var(--transition);
+}
 
-.mobile-only {
+.nav-btn:hover {
+  background: var(--color-blood);
+}
+
+.nav-toggle {
   display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  width: 30px;
+  height: 20px;
+  z-index: 1001;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--color-bone);
+  transition: var(--transition);
+  position: absolute;
+}
+
+.nav-toggle span:first-child { top: 0; }
+.nav-toggle span:last-child { bottom: 0; }
+
+.nav-toggle.is-active span:first-child {
+  transform: rotate(45deg) translateY(9px);
+}
+.nav-toggle.is-active span:last-child {
+  transform: rotate(-45deg) translateY(-9px);
 }
 
 @media (max-width: 992px) {
-  .hamburger { display: block; }
-  .hide-mobile { display: none; }
-  .mobile-only { display: block; }
+  .nav-toggle { display: block; }
   
-  .nav-links-wrapper {
+  .nav-links-wrap {
     position: fixed;
     top: 0;
-    left: -100%;
+    right: -100%;
     width: 100%;
     height: 100vh;
-    background: var(--primary-color);
-    padding: 100px 2rem;
-    transition: all 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
-    z-index: 1000;
-    overflow-y: auto;
-  }
-
-  .nav-links-wrapper.active {
-    left: 0;
-  }
-
-  .nav-links {
-    flex-direction: column;
+    background: var(--color-cream);
+    display: flex;
     align-items: center;
-    gap: 2.5rem;
-  }
-  .btn-book {
-    margin: 0;
+    justify-content: center;
+    transition: var(--transition);
+    z-index: 1000;
   }
 
-  .logo-item { margin-bottom: 3rem; }
-  .logo-text { font-size: 2rem; }
+  .nav-links-wrap.is-active {
+    right: 0;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .nav-link {
+    font-size: 2rem;
+    text-transform: none;
+  }
+
+  .nav-btn {
+    display: none;
+  }
 }
 </style>

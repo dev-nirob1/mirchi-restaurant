@@ -1,27 +1,27 @@
 <script setup>
-import VideoHero from '@/zems/Front/Components/Section/VideoHero.vue';
-import SpiceJourney from '@/zems/Front/Components/Section/SpiceJourney.vue';
-import SignatureDishes from '@/zems/Front/Components/Section/SignatureDishes.vue';
-import MirchiExperience from '@/zems/Front/Components/Section/MirchiExperience.vue';
-import QuickStats from '@/zems/Front/Components/Section/QuickStats.vue';
-import TodaySpecial from '@/zems/Front/Components/Section/TodaySpecial.vue';
-import TestimonialCarousel from '@/zems/Front/Components/Section/TestimonialCarousel.vue';
+import ModernHero from '@/zems/Front/Components/Section/ModernHero.vue';
+import CulinaryPhilosophy from '@/zems/Front/Components/Section/CulinaryPhilosophy.vue';
+import ModernSignature from '@/zems/Front/Components/Section/ModernSignature.vue';
+import GalleryMasonry from '@/zems/Front/Components/Section/GalleryMasonry.vue';
+import FlavorStats from '@/zems/Front/Components/Section/FlavorStats.vue';
+import ModernTestimonials from '@/zems/Front/Components/Section/ModernTestimonials.vue';
+import CallToRitual from '@/zems/Front/Components/Section/CallToRitual.vue';
 </script>
 
 <template>
-  <div class="home-page">
-    <VideoHero />
-    <SpiceJourney />
-    <SignatureDishes />
-    <MirchiExperience />
-    <QuickStats />
-    <TodaySpecial />
-    <TestimonialCarousel />
+  <div class="home-page-modern">
+    <ModernHero />
+    <CulinaryPhilosophy />
+    <ModernSignature />
+    <GalleryMasonry />
+    <FlavorStats />
+    <ModernTestimonials />
+    <CallToRitual />
   </div>
 </template>
 
 <style scoped>
-.home-page {
+.home-page-modern {
   overflow-x: hidden;
 }
 </style>

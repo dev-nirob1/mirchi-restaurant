@@ -1,4 +1,5 @@
 <script setup>
+import { RouterLink } from 'vue-router';
 </script>
 
 <template>
@@ -21,8 +22,8 @@
       <h1 class="logo-text" v-fade-in="'up'">MIRCHI</h1>
       <p class="tagline" v-fade-in="'up'">Authentic Spice, Modern Soul</p>
       <div class="cta-groups" v-fade-in="'up'">
-        <button class="btn-primary">Book Table</button>
-        <button class="btn-secondary">Order Online</button>
+        <RouterLink to="/reservation" class="btn-primary">Book Table</RouterLink>
+        <RouterLink to="/menu" class="btn-secondary">Order Online</RouterLink>
       </div>
     </div>
   </section>
