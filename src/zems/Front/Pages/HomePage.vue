@@ -6,10 +6,12 @@ import GalleryMasonry from '@/zems/Front/Components/Section/GalleryMasonry.vue';
 import FlavorStats from '@/zems/Front/Components/Section/FlavorStats.vue';
 import ModernTestimonials from '@/zems/Front/Components/Section/ModernTestimonials.vue';
 import CallToRitual from '@/zems/Front/Components/Section/CallToRitual.vue';
+import HeroSection from '../Components/Section/HeroSection.vue';
 </script>
 
 <template>
   <div class="home-page-modern">
+    <HeroSection/>
     <ModernHero />
     <CulinaryPhilosophy />
     <ModernSignature />
