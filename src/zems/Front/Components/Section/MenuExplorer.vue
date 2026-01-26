@@ -7,24 +7,24 @@ const activeCategory = ref('All');
 
 const menuItems = [
   // Appetizers
-  { id: 1, title: 'Samosa Platter', category: 'Appetizers', price: '$12', heat: 1, desc: 'Golden crisped pastry filled with spiced potatoes and forest peas.', image: 'https://images.unsplash.com/photo-1601050633647-8f8f1f3ca419?auto=format&fit=crop&q=80&w=800' },
-  { id: 2, title: 'Crispy Okra Fries', category: 'Appetizers', price: '$10', heat: 1, desc: 'Thinly sliced okra dusted with mango powder and black salt.', image: 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&q=80&w=800' },
-  { id: 3, title: 'Paneer Chili Fry', category: 'Appetizers', price: '$14', heat: 2, desc: 'Fresh cottage cheese tossed with bell peppers and green house-grown chilies.', image: 'https://images.unsplash.com/photo-1567184109171-9b5757d5d21c?auto=format&fit=crop&q=80&w=800' },
+  { id: 1, title: 'Samosa Platter', category: 'Appetizers', price: '$12', heat: 1, desc: 'Golden crisped pastry filled with spiced potatoes and forest peas.', image: 'https://images.pexels.com/photos/30446144/pexels-photo-30446144.jpeg?_gl=1*qzjzpf*_ga*OTAzOTgwMTguMTczNzAwNTI1OA..*_ga_8JE65Q40S6*czE3Njk0MzE4NDMkbzQ1JGcxJHQxNzY5NDMyNjMyJGozJGwwJGgw' },
+  { id: 2, title: 'Crispy Okra Fries', category: 'Appetizers', price: '$10', heat: 1, desc: 'Thinly sliced okra dusted with mango powder and black salt.', image: 'https://images.pexels.com/photos/2498440/pexels-photo-2498440.jpeg?_gl=1*sdsulu*_ga*OTAzOTgwMTguMTczNzAwNTI1OA..*_ga_8JE65Q40S6*czE3Njk0MzE4NDMkbzQ1JGcxJHQxNzY5NDMyNzE4JGozOSRsMCRoMA..' },
+  { id: 3, title: 'Paneer Chili Fry', category: 'Appetizers', price: '$14', heat: 2, desc: 'Fresh cottage cheese tossed with bell peppers and green house-grown chilies.', image: 'https://images.pexels.com/photos/9609835/pexels-photo-9609835.jpeg?_gl=1*zaqw4f*_ga*OTAzOTgwMTguMTczNzAwNTI1OA..*_ga_8JE65Q40S6*czE3Njk0MzE4NDMkbzQ1JGcxJHQxNzY5NDMyODkyJGoxMSRsMCRoMA..' },
 
   // Main Course
-  { id: 4, title: 'Guntur Chili Chicken', category: 'Main Course', price: '$26', heat: 3, desc: 'A fiery signature preparation using hand-pounded Guntur chilies.', image: 'https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?auto=format&fit=crop&q=80&w=800' },
-  { id: 5, title: 'Pepper Crab Masala', category: 'Main Course', price: '$34', heat: 2, desc: 'Sea crab reduction of tellicherry peppercorns and toasted curry leaves.', image: 'https://images.unsplash.com/photo-1563379091339-03b21bc4a4f8?auto=format&fit=crop&q=80&w=800' },
+  { id: 4, title: 'Guntur Chili Chicken', category: 'Main Course', price: '$26', heat: 3, desc: 'A fiery signature preparation using hand-pounded Guntur chilies.', image: 'https://images.pexels.com/photos/33869807/pexels-photo-33869807.jpeg?_gl=1*rw7vh6*_ga*OTAzOTgwMTguMTczNzAwNTI1OA..*_ga_8JE65Q40S6*czE3Njk0MzE4NDMkbzQ1JGcxJHQxNzY5NDMyNzY0JGo1MyRsMCRoMA..' },
+  { id: 5, title: 'Pepper Crab Masala', category: 'Main Course', price: '$34', heat: 2, desc: 'Sea crab reduction of tellicherry peppercorns and toasted curry leaves.', image: 'https://images.pexels.com/photos/7151075/pexels-photo-7151075.jpeg?_gl=1*tbc1ew*_ga*OTAzOTgwMTguMTczNzAwNTI1OA..*_ga_8JE65Q40S6*czE3Njk0MzE4NDMkbzQ1JGcxJHQxNzY5NDMyOTczJGoyOSRsMCRoMA..' },
   { id: 6, title: 'Saffron Lamb Shank', category: 'Main Course', price: '$38', heat: 1, desc: '12-hour braised pasture lamb in wild saffron and clay-pot spices.', image: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&q=80&w=800' },
   { id: 7, title: 'Black Truffle Dal', category: 'Main Course', price: '$22', heat: 1, desc: 'Slow-simmered black lentils finished with charcoal smoke and truffle oil.', image: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&q=80&w=800' },
 
   // Desserts
-  { id: 8, title: 'Gulab Jamun Cloud', category: 'Desserts', price: '$12', heat: 0, desc: 'Milk dumplings in saffron syrup served with mascarpone foam.', image: 'https://images.unsplash.com/photo-159113103133-7090f42dfaf3?auto=format&fit=crop&q=80&w=800' },
-  { id: 9, title: 'Mango Cardamom Tart', category: 'Desserts', price: '$14', heat: 0, desc: 'Alphonso mango pulp layered with cardamom-infused white chocolate.', image: 'https://images.unsplash.com/photo-1532499016263-f2c3e98df9c8?auto=format&fit=crop&q=80&w=800' },
+  { id: 8, title: 'Gulab Jamun Cloud', category: 'Desserts', price: '$12', heat: 0, desc: 'Milk dumplings in saffron syrup served with mascarpone foam.', image: 'https://images.pexels.com/photos/17091579/pexels-photo-17091579.jpeg?_gl=1*1eglru3*_ga*OTAzOTgwMTguMTczNzAwNTI1OA..*_ga_8JE65Q40S6*czE3Njk0MzE4NDMkbzQ1JGcxJHQxNzY5NDMzMDU2JGozOSRsMCRoMA..' },
+  { id: 9, title: 'Mango Cardamom Tart', category: 'Desserts', price: '$14', heat: 0, desc: 'Alphonso mango pulp layered with cardamom-infused white chocolate.', image: 'https://images.pexels.com/photos/34193676/pexels-photo-34193676.jpeg?_gl=1*mz73ll*_ga*OTAzOTgwMTguMTczNzAwNTI1OA..*_ga_8JE65Q40S6*czE3Njk0MzE4NDMkbzQ1JGcxJHQxNzY5NDMzMTY1JGo1OSRsMCRoMA..' },
 
   // Beverages
-  { id: 10, title: 'Lychee Ginger Fizz', category: 'Beverages', price: '$9', heat: 0, desc: 'Fresh lychee nectar with cold-pressed ginger and organic agave.', image: 'https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&q=80&w=800' },
-  { id: 11, title: 'Smoked Masala Chai', category: 'Beverages', price: '$6', heat: 1, desc: 'Traditional estate tea finished with wood-smoke and raw spices.', image: 'https://images.unsplash.com/photo-1594631252845-29fc45865506?auto=format&fit=crop&q=80&w=800' },
-  { id: 12, title: 'Rose Petal Lassi', category: 'Beverages', price: '$8', heat: 0, desc: 'Slow-churned yogurt with organic rose preserve and dried petals.', image: 'https://images.unsplash.com/photo-1546173159-315724a31696?auto=format&fit=crop&q=80&w=800' },
+  { id: 10, title: 'Lychee Ginger Fizz', category: 'Beverages', price: '$9', heat: 0, desc: 'Fresh lychee nectar with cold-pressed ginger and organic agave.', image: 'https://images.unsplash.com/photo-1682530017002-34e2cb7b1653?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
+  { id: 11, title: 'Smoked Masala Chai', category: 'Beverages', price: '$6', heat: 1, desc: 'Traditional estate tea finished with wood-smoke and raw spices.', image: 'https://images.pexels.com/photos/16942969/pexels-photo-16942969.jpeg?_gl=1*1g9ruy6*_ga*OTAzOTgwMTguMTczNzAwNTI1OA..*_ga_8JE65Q40S6*czE3Njk0MzE4NDMkbzQ1JGcxJHQxNzY5NDMzNjYyJGo1OSRsMCRoMA..' },
+  { id: 12, title: 'Rose Petal Lassi', category: 'Beverages', price: '$8', heat: 0, desc: 'Slow-churned yogurt with organic rose preserve and dried petals.', image: 'https://images.pexels.com/photos/20689315/pexels-photo-20689315.jpeg?_gl=1*19blcrt*_ga*OTAzOTgwMTguMTczNzAwNTI1OA..*_ga_8JE65Q40S6*czE3Njk0MzE4NDMkbzQ1JGcxJHQxNzY5NDMzNzQ1JGo0MSRsMCRoMA..' },
 ];
 
 const filteredItems = computed(() => {
