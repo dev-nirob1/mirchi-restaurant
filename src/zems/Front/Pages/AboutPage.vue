@@ -3,7 +3,7 @@ import PageHero from '@/zems/Front/Components/Widget/PageHero.vue';
 import AboutHeritage from '@/zems/Front/Components/Section/AboutHeritage.vue';
 import AboutPhilosophy from '@/zems/Front/Components/Section/AboutPhilosophy.vue';
 import AboutTeam from '@/zems/Front/Components/Section/AboutTeam.vue';
-import AboutAwards from '@/zems/Front/Components/Section/AboutAwards.vue';
+// import AboutAwards from '@/zems/Front/Components/Section/AboutAwards.vue';
 import AboutTimeline from '@/zems/Front/Components/Section/AboutTimeline.vue';
 import AboutNewsletter from '@/zems/Front/Components/Section/AboutNewsletter.vue';
 </script>
@@ -15,7 +15,7 @@ import AboutNewsletter from '@/zems/Front/Components/Section/AboutNewsletter.vue
     <AboutHeritage />
     <AboutPhilosophy />
     <AboutTeam />
-    <AboutAwards />
+    <!-- <AboutAwards /> -->
     <AboutTimeline />
     <AboutNewsletter />
   </div>
