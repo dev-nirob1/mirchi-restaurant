@@ -56,4 +56,12 @@ const signaturedDishes = ref(
 .signature-dishes {
   padding: 3.75rem 0;
 }
+
+.signature-dishes .btn-outline {
+  background: var(--primary-color);
+}
+
+.signature-dishes .btn-outline:hover {
+  background: var(--accent-color);
+}
 </style>

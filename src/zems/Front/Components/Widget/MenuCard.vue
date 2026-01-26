@@ -1,4 +1,6 @@
 <script setup>
+import { cart } from '@/store/cart';
+
 defineProps({
   dish: Object
 })
@@ -12,13 +14,14 @@ defineProps({
       <SubTitle>{{ dish.title }}</SubTitle>
       <BaseParagraph>{{ dish.desc }}</BaseParagraph>
       <BaseParagraph class="price">Price: <span>{{ dish.price }}</span></BaseParagraph>
-      <BaseButton class="btn-primary">Order Now</BaseButton>
+      <BaseButton class="btn-primary" @click="cart.addItem(dish)">Order Now</BaseButton>
     </div>
   </div>
 </template>
 <style scoped>
 .menu-card {
   display: flex;
+  flex-direction: column;
   gap: 1rem;
   background: var(--primary-color);
 }
@@ -51,5 +54,11 @@ defineProps({
   padding: 1rem;
   width: 100%;
   flex: 0 0 50%;
+}
+
+@media(min-width: 768px) {
+  .menu-card {
+    flex-direction: row;
+  }
 }
 </style>

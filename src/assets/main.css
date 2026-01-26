@@ -177,8 +177,6 @@ ul {
 
 .btn-primary:hover {
   background-color: var(--color-blood);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(139, 0, 0, 0.4);
 }
 
 .btn-outline {

@@ -38,8 +38,9 @@ import SectionTitle from '@/components/Widget/SectionTitle.vue';
   flex: 1;
   background: var(--primary-color);
   border: 1px solid var(--primary-color);
-  padding: 1.15rem 1.5rem;
+  padding: 1.25rem 1.5rem;
   color: var(--white);
+  margin: 0 !important;
 }
 
 .email-input:focus {
@@ -47,7 +48,7 @@ import SectionTitle from '@/components/Widget/SectionTitle.vue';
 }
 
 .btn-primary {
-  padding: 1rem 1.5rem;
+  padding: 1.15rem 2rem;
   margin: 0 !important;
 }
 
