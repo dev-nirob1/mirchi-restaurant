@@ -1,10 +1,17 @@
 <script setup>
 import { cart } from '@/store/cart';
 import { computed } from 'vue';
+import { useRouter } from 'vue-router';
 
+const router = useRouter();
 const isOpen = computed(() => cart.isOpen.value);
 const items = computed(() => cart.items.value);
 const totalPrice = computed(() => cart.totalPrice.value);
+
+const handleCheckout = () => {
+    cart.close();
+    router.push({ name: 'checkout' });
+};
 
 const formatPrice = (price) => {
     return new Intl.NumberFormat('en-BD', {
@@ -65,7 +72,7 @@ const formatPrice = (price) => {
                         <span>Subtotal</span>
                         <span class="total-amount">{{ formatPrice(totalPrice) }}</span>
                     </div>
-                    <BaseButton class="btn-primary w-full mt-4">Proceed to Ritual</BaseButton>
+                    <BaseButton class="btn-primary w-full mt-4" @click="handleCheckout">Proceed to Ritual</BaseButton>
                     <p class="cart-note">* Personalizing your delivery experience...</p>
                 </div>
             </div>

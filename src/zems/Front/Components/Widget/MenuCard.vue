@@ -1,12 +1,17 @@
 <script setup>
+import { ref } from 'vue';
 import { cart } from '@/store/cart';
+import DishModal from './DishModal.vue';
 
 defineProps({
   dish: Object
 })
+
+const isModalOpen = ref(false);
 </script>
+
 <template>
-  <div class="menu-card">
+  <div class="menu-card" @click="isModalOpen = true">
     <div class="image">
       <BaseImage :image="dish.image" />
     </div>
@@ -14,8 +19,11 @@ defineProps({
       <SubTitle>{{ dish.title }}</SubTitle>
       <BaseParagraph>{{ dish.desc }}</BaseParagraph>
       <BaseParagraph class="price">Price: <span>{{ dish.price }}</span></BaseParagraph>
-      <BaseButton class="btn-primary" @click="cart.addItem(dish)">Order Now</BaseButton>
+      <BaseButton class="btn-primary" @click.stop="cart.addItem(dish)">Order Now</BaseButton>
     </div>
+
+    <!-- Dish Details Modal -->
+    <DishModal :dish="dish" :isOpen="isModalOpen" @close="isModalOpen = false" />
   </div>
 </template>
 <style scoped>
@@ -24,6 +32,7 @@ defineProps({
   flex-direction: column;
   gap: 1rem;
   background: var(--primary-color);
+  cursor: pointer;
 }
 
 .menu-card .sub-title {

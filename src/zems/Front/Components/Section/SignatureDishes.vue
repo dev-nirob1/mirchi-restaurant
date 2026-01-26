@@ -40,7 +40,7 @@ const signaturedDishes = ref(
 <template>
   <section class="signature-dishes bg-light">
     <div class="container">
-      <SectionTitle class="mb-3" subTitle="Our Manifestation" title="Signature Creations" />
+      <SectionTitle class="mb-1" subTitle="Our Manifestation" title="Signature Creations" />
       <div class="medium-2 gap-2">
         <MenuCard v-for="dish in signaturedDishes" :key="dish.id" :dish="dish" />
       </div>
@@ -54,7 +54,7 @@ const signaturedDishes = ref(
 
 <style scoped>
 .signature-dishes {
-  padding: 3.75rem 0;
+  padding: 6rem 0 3.75rem 0;
 }
 
 .signature-dishes .btn-outline {

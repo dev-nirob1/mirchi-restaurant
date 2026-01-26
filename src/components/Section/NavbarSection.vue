@@ -40,6 +40,9 @@ onMounted(() => {
             <li class="nav-item">
               <RouterLink to="/reservation" @click="isMenuOpen = false" class="nav-link">Reservations</RouterLink>
             </li>
+            <li class="nav-item">
+              <RouterLink to="/contact" @click="isMenuOpen = false" class="nav-link">Contact</RouterLink>
+            </li>
           </ul>
         </div>
 

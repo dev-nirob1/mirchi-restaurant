@@ -1,4 +1,5 @@
 import { reactive, computed } from 'vue'
+import { toast } from '@/store/toast'
 
 const state = reactive({
   items: [],
@@ -44,6 +45,7 @@ export const cart = {
         quantity: 1,
       })
     }
+    toast.success(`Ritual update: ${dish.title} added.`)
     this.open() // Automatically open drawer when item is added
   },
 

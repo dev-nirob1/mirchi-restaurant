@@ -1,6 +1,7 @@
 <script setup>
 import { reactive } from 'vue';
 import SectionTitle from '@/components/Widget/SectionTitle.vue';
+import { toast } from '@/store/toast';
 
 const form = reactive({
   name: '',
@@ -14,7 +15,7 @@ const form = reactive({
 
 const submitForm = () => {
   console.log('Reservation Submitted:', form);
-  alert('Thank you! Your reservation request has been sent. We will contact you shortly to confirm.');
+  toast.success('The ritual is set. We will contact you shortly to confirm your table.');
   // Reset form
   Object.keys(form).forEach(key => form[key] = '');
   form.guests = '2';

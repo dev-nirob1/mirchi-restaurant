@@ -3,6 +3,9 @@ import HomePage from './Pages/HomePage.vue'
 import MenuPage from './Pages/MenuPage.vue'
 import AboutPage from './Pages/AboutPage.vue'
 import ReservationPage from './Pages/ReservationPage.vue'
+import CheckoutPage from './Pages/CheckoutPage.vue'
+import SuccessPage from './Pages/SuccessPage.vue'
+import ContactPage from './Pages/ContactPage.vue'
 
 const frontRoutes = [
   {
@@ -28,6 +31,21 @@ const frontRoutes = [
         path: 'reservation',
         name: 'reservation',
         component: ReservationPage,
+      },
+      {
+        path: 'checkout',
+        name: 'checkout',
+        component: CheckoutPage,
+      },
+      {
+        path: 'success',
+        name: 'success',
+        component: SuccessPage,
+      },
+      {
+        path: 'contact',
+        name: 'contact',
+        component: ContactPage,
       },
     ],
   },
