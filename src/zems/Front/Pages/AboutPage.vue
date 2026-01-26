@@ -5,7 +5,6 @@ import AboutPhilosophy from '@/zems/Front/Components/Section/AboutPhilosophy.vue
 import AboutTeam from '@/zems/Front/Components/Section/AboutTeam.vue';
 import AboutAwards from '@/zems/Front/Components/Section/AboutAwards.vue';
 import AboutTimeline from '@/zems/Front/Components/Section/AboutTimeline.vue';
-import AboutGallery from '@/zems/Front/Components/Section/AboutGallery.vue';
 import AboutNewsletter from '@/zems/Front/Components/Section/AboutNewsletter.vue';
 </script>
 
@@ -18,7 +17,6 @@ import AboutNewsletter from '@/zems/Front/Components/Section/AboutNewsletter.vue
     <AboutTeam />
     <AboutAwards />
     <AboutTimeline />
-    <AboutGallery />
     <AboutNewsletter />
   </div>
 </template>
