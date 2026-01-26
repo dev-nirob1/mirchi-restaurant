@@ -96,7 +96,6 @@ onMounted(() => {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--color-bone);
-  opacity: 0.6;
   transition: var(--transition);
   position: relative;
 }
