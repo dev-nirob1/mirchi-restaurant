@@ -141,7 +141,7 @@ const handleOrder = () => {
 
 <style scoped>
 .checkout-page {
-  padding: 10rem 0 6rem 0;
+  padding: 8rem 0 6rem 0;
   min-height: 100vh;
   background: var(--bg-dark);
 }
