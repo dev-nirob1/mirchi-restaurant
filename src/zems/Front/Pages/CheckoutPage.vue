@@ -171,11 +171,10 @@ const handleOrder = () => {
   background: var(--accent-color);
 }
 
-/* Glass Containers */
+/* Opaque Containers */
 .checkout-form-container,
 .summary-card {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(15px);
+  background: #0a0a0a;
   padding: 3rem;
   border: 1px solid rgba(255, 255, 255, 0.05);
   transition: all 0.4s ease;

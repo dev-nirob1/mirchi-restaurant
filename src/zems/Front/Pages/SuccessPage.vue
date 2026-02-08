@@ -121,8 +121,7 @@ const router = useRouter();
 
 /* Message Card */
 .message-card {
-  background: rgba(255, 255, 255, 0.02);
-  backdrop-filter: blur(20px);
+  background: var(--bg-dark);
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 2px;
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);

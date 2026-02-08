@@ -161,10 +161,9 @@ const handleSubmit = () => {
   transform: translateY(-2px);
 }
 
-/* Form Styling - Matching ReservationSection */
+/* Opaque Container - Matching ReservationSection */
 .contact-form-container {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(10px);
+  background: #0a0a0a;
   padding: 3rem;
   border: 1px solid rgba(255, 255, 255, 0.05);
 }

@@ -30,10 +30,10 @@ const formatPrice = (price) => {
         </Transition>
 
         <!-- Drawer -->
-        <Transition name="slide">
+        <Transition name="premium-slide">
             <div v-if="isOpen" class="cart-drawer">
                 <div class="cart-header">
-                    <h3 class="cart-title">Your Ritual Selection</h3>
+                    <h3 class="cart-title">Your Ritual Tray</h3>
                     <button class="close-btn" @click="cart.close()">
                         <i class="fa-solid fa-xmark"></i>
                     </button>
@@ -42,8 +42,8 @@ const formatPrice = (price) => {
                 <div class="cart-body">
                     <div v-if="items.length === 0" class="empty-cart">
                         <i class="fa-solid fa-utensils mb-3"></i>
-                        <p>Your tray is empty.</p>
-                        <BaseButton class="btn-outline mt-3" @click="cart.close()">Discover Menu</BaseButton>
+                        <p class="empty-text">Your ritual tray is empty.</p>
+                        <BaseButton class="btn-outline mt-3 btn-sm" @click="cart.close()">Discover Menu</BaseButton>
                     </div>
 
                     <div v-else class="cart-items">
@@ -55,12 +55,14 @@ const formatPrice = (price) => {
                                 <h4 class="item-title">{{ item.title }}</h4>
                                 <p class="item-price">{{ item.price }}</p>
                                 <div class="quantity-controls">
-                                    <button @click="cart.updateQuantity(item.id, item.quantity - 1)">-</button>
-                                    <span>{{ item.quantity }}</span>
-                                    <button @click="cart.updateQuantity(item.id, item.quantity + 1)">+</button>
+                                    <button @click="cart.updateQuantity(item.id, item.quantity - 1)" class="qty-btn"
+                                        :disabled="item.quantity <= 1">-</button>
+                                    <span class="qty-val">{{ item.quantity }}</span>
+                                    <button @click="cart.updateQuantity(item.id, item.quantity + 1)"
+                                        class="qty-btn">+</button>
                                 </div>
                             </div>
-                            <button class="remove-btn" @click="cart.removeItem(item.id)">
+                            <button class="remove-btn" @click="cart.removeItem(item.id)" title="Remove item">
                                 <i class="fa-solid fa-trash-can"></i>
                             </button>
                         </div>
@@ -69,11 +71,12 @@ const formatPrice = (price) => {
 
                 <div v-if="items.length > 0" class="cart-footer">
                     <div class="total-row">
-                        <span>Subtotal</span>
+                        <span class="total-label">Subtotal</span>
                         <span class="total-amount">{{ formatPrice(totalPrice) }}</span>
                     </div>
-                    <BaseButton class="btn-primary w-full mt-4" @click="handleCheckout">Proceed to Ritual</BaseButton>
-                    <p class="cart-note">* Personalizing your delivery experience...</p>
+                    <BaseButton class="btn-primary w-full mt-4 py-3" @click="handleCheckout">
+                        Initiate Ritual
+                    </BaseButton>
                 </div>
             </div>
         </Transition>
@@ -84,9 +87,8 @@ const formatPrice = (price) => {
 .cart-backdrop {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(4px);
-    z-index: 999;
+    background: #000;
+    z-index: 2000;
 }
 
 .cart-drawer {
@@ -95,46 +97,49 @@ const formatPrice = (price) => {
     right: 0;
     bottom: 0;
     width: 100%;
-    max-width: 400px;
-    background: var(--color-noir);
-    border-left: 1px solid rgba(var(--color-bone), 0.1);
-    z-index: 1000;
+    max-width: 420px;
+    background: var(--bg-dark);
     display: flex;
     flex-direction: column;
-    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+    z-index: 2001;
+    box-shadow: -15px 0 40px rgba(0, 0, 0, 0.6);
+    border-left: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .cart-header {
-    padding: 2rem;
+    padding: 2.5rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
 }
 
 .cart-title {
     font-family: var(--font-serif);
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     color: var(--color-bone);
+    letter-spacing: -0.5px;
 }
 
 .close-btn {
     background: transparent;
     border: none;
     color: var(--color-bone);
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     cursor: pointer;
-    transition: var(--transition);
+    transition: all 0.3s ease;
+    opacity: 0.6;
 }
 
 .close-btn:hover {
     color: var(--accent-color);
+    opacity: 1;
 }
 
 .cart-body {
     flex: 1;
     overflow-y: auto;
-    padding: 2rem;
+    padding: 2.5rem 2rem;
 }
 
 .empty-cart {
@@ -144,24 +149,36 @@ const formatPrice = (price) => {
     align-items: center;
     justify-content: center;
     text-align: center;
-    opacity: 0.5;
 }
 
 .empty-cart i {
-    font-size: 3rem;
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
+.empty-text {
+    font-family: var(--font-sans);
+    color: var(--color-bone);
+    opacity: 0.6;
+    font-size: 0.95rem;
 }
 
 .cart-item {
     display: flex;
-    gap: 1rem;
+    gap: 1.25rem;
     margin-bottom: 2rem;
     align-items: center;
+    background: rgba(255, 255, 255, 0.02);
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.03);
 }
 
 .item-img {
-    width: 80px;
-    height: 80px;
-    background: var(--color-charcoal);
+    width: 85px;
+    height: 85px;
+    background: #000;
 }
 
 .item-img img {
@@ -176,15 +193,17 @@ const formatPrice = (price) => {
 
 .item-title {
     font-family: var(--font-sans);
-    font-weight: 700;
-    font-size: 0.9rem;
+    font-weight: 800;
+    font-size: 0.8rem;
     color: var(--color-bone);
     margin-bottom: 0.25rem;
     text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .item-price {
     font-size: 0.85rem;
+    font-weight: 600;
     color: var(--accent-color);
     margin-bottom: 0.75rem;
 }
@@ -192,26 +211,49 @@ const formatPrice = (price) => {
 .quantity-controls {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    gap: 0.75rem;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 2px;
     width: fit-content;
-    padding: 0.25rem 0.5rem;
 }
 
-.quantity-controls button {
+.qty-btn {
     background: transparent;
     border: none;
     color: var(--color-bone);
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.qty-btn:hover:not(:disabled) {
+    background: var(--accent-color);
+}
+
+.qty-btn:disabled {
+    opacity: 0.2;
+    cursor: not-allowed;
+}
+
+.qty-val {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--color-bone);
+    min-width: 20px;
+    text-align: center;
 }
 
 .remove-btn {
     background: transparent;
     border: none;
-    color: rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.2);
     cursor: pointer;
-    transition: var(--transition);
+    transition: all 0.3s ease;
 }
 
 .remove-btn:hover {
@@ -220,35 +262,36 @@ const formatPrice = (price) => {
 
 .cart-footer {
     padding: 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    background: rgba(255, 255, 255, 0.02);
+    background: rgba(255, 255, 255, 0.01);
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
 }
 
 .total-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.total-label {
     font-family: var(--font-sans);
-    font-weight: 700;
-    font-size: 1.1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.5);
 }
 
 .total-amount {
+    font-family: var(--font-sans);
+    font-weight: 900;
+    font-size: 1.4rem;
     color: var(--accent-color);
-}
-
-.cart-note {
-    font-size: 0.75rem;
-    text-align: center;
-    margin-top: 1rem;
-    opacity: 0.4;
-    font-style: italic;
 }
 
 /* Transitions */
 .fade-enter-active,
 .fade-leave-active {
-    transition: opacity 0.3s ease;
+    transition: opacity 0.5s ease-in-out;
 }
 
 .fade-enter-from,
@@ -256,13 +299,13 @@ const formatPrice = (price) => {
     opacity: 0;
 }
 
-.slide-enter-active,
-.slide-leave-active {
-    transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+.premium-slide-enter-active,
+.premium-slide-leave-active {
+    transition: transform 0.5s ease-in-out;
 }
 
-.slide-enter-from,
-.slide-leave-to {
+.premium-slide-enter-from,
+.premium-slide-leave-to {
     transform: translateX(100%);
 }
 </style>
