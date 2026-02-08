@@ -44,7 +44,16 @@ const isModalOpen = ref(false);
 }
 
 .menu-card p {
-  font-size: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.7);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 1rem;
 }
 
 .menu-card .image {
